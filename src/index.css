@@ -1,0 +1,215 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional medical color scheme */
+@layer base {
+  :root {
+    --background: 241 248 232;           /* Whisper White */
+    --foreground: 30 41 59;              /* Slate Black Text */
+
+    --card: 231 251 230;                 /* Fresh Mint */
+    --card-foreground: 30 41 59;
+
+    --popover: 255 242 235;
+    --popover-foreground: 30 41 59;
+
+    --primary: 85 173 155;               /* Deep Healing Green */
+    --primary-foreground: 255 255 255;
+
+    --secondary: 149 210 179;            /* Calm Green Tea */
+    --secondary-foreground: 30 41 59;
+
+    --muted: 226 232 240;                /* Soft Muted Gray */
+    --muted-foreground: 100 116 139;
+
+    --accent: 149 210 179;               /* Matching Accent */
+    --accent-foreground: 30 41 59;
+
+    --destructive: 239 68 68;            /* Alert Red */
+    --destructive-foreground: 255 255 255;
+
+    --border: 203 213 225;
+    --input: 226 232 240;
+    --ring: 85 173 155;
+
+    --radius: 0.5rem;
+
+    --success-green: 85 173 155;
+    --info-blue: 59 130 246;
+  }
+
+  .dark {
+    --background: 30 41 59;
+    --foreground: 241 248 232;
+
+    --card: 38 50 66;
+    --card-foreground: 241 248 232;
+
+    --popover: 38 50 66;
+    --popover-foreground: 241 248 232;
+
+    --primary: 149 210 179;
+    --primary-foreground: 30 41 59;
+
+    --secondary: 85 173 155;
+    --secondary-foreground: 255 255 255;
+
+    --muted: 55 65 81;
+    --muted-foreground: 156 163 175;
+
+    --accent: 216 239 211;
+    --accent-foreground: 30 41 59;
+
+    --destructive: 220 38 38;
+    --destructive-foreground: 255 255 255;
+
+    --border: 51 65 85;
+    --input: 71 85 105;
+    --ring: 149 210 179;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Professional medical animations */
+@keyframes pulse-medical {
+  0%, 100% {
+    opacity: 100;
+  }
+  50% {
+    opacity: .7;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-medical {
+  animation: pulse-medical 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+/* Professional medical gradients */
+.medical-gradient {
+  background: linear-gradient(135deg, rgb(29 78 216) 0%, rgb(59 130 246) 100%);
+}
+
+.medical-gradient-light {
+  background: linear-gradient(135deg, rgb(59 130 246 / 0.1) 0%, rgb(147 197 253 / 0.1) 100%);
+}
+
+/* Calendar Styling */
+.calendar-container .react-calendar {
+  width: 100%;
+  background: white;
+  border: 1px solid rgb(203 213 225);
+  border-radius: 0.5rem;
+  color: rgb(30 41 59);
+  font-family: inherit;
+}
+
+.calendar-container .react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  color: inherit;
+}
+
+.calendar-container .react-calendar button:hover {
+  background-color: rgb(241 245 249);
+}
+
+.calendar-container .react-calendar__tile {
+  max-width: 100%;
+  padding: 0.75rem 0.5rem;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  font-size: 0.875rem;
+}
+
+.calendar-container .react-calendar__tile:enabled:hover,
+.calendar-container .react-calendar__tile:enabled:focus {
+  background-color: rgb(241 245 249);
+}
+
+.calendar-container .react-calendar__tile--now {
+  background: rgb(59 130 246);
+  color: white;
+}
+
+.calendar-container .react-calendar__tile--now:enabled:hover,
+.calendar-container .react-calendar__tile--now:enabled:focus {
+  background: rgb(37 99 235);
+}
+
+.calendar-container .react-calendar__tile--active {
+  background: rgb(85 173 155);
+  color: white;
+}
+
+.calendar-container .react-calendar__tile--active:enabled:hover,
+.calendar-container .react-calendar__tile--active:enabled:focus {
+  background: rgb(75 155 140);
+}
+
+.calendar-container .react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.calendar-container .react-calendar__navigation button:hover {
+  background-color: rgb(241 245 249);
+}
+
+.calendar-container .react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: rgb(100 116 139);
+}
+
+.calendar-container .react-calendar__month-view__weekdays__weekday {
+  padding: 0.5rem;
+}
